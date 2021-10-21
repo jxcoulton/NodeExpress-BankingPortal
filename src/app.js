@@ -35,7 +35,7 @@ app.get("/checking", (req, res) => {
 });
 
 app.get("/credit", (req, res) => {
-  res.render("accounts", { accounts: accounts.credit });
+  res.render("accounts", { account: accounts.credit });
 });
 app.get("/profile", (req, res) => {
   res.render("profile", { user: user[0] });
