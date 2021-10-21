@@ -48,6 +48,16 @@ app.get("/transfer", (req, res) => {
   res.render("transfer");
 });
 
-app.post("/transfer", (req, res) => {});
+app.post("/transfer", (req, res) => {
+  accounts[req.body.from].balance -= req.body.amount;
+  accounts[req.body.tp].balance += parseInt(req.body.amount, 10);
+  const accountsJSON = JSON.stringify(accounts, null, 4);
+  fs.writeFileSync(
+    path.join(__dirname, "json/accounts.json"),
+    accountsJSON,
+    "utf8"
+  );
+  res.render("transfer", { message: "transfer completed" });
+});
 
 app.listen(3000, () => console.log("PS Project Running on port 3000!"));
