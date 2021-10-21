@@ -59,7 +59,7 @@ app.post("/transfer", (req, res) => {
     accountsJSON,
     "utf8"
   );
-  res.render("transfer", { message: "transfer completed" });
+  res.render("transfer", { message: "Transfer Completed" });
 });
 
 app.listen(3000, () => console.log("PS Project Running on port 3000!"));
