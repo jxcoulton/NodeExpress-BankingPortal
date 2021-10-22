@@ -1,7 +1,7 @@
 const express = require("express");
 const { accounts } = require("../data");
 
-// const router = require("express.Router");
+// const { router } = require("express.Router");
 const router = express.Router();
 
 router.get("/savings", (req, res) => {
@@ -16,4 +16,4 @@ router.get("/credit", (req, res) => {
   res.render("account", { account: accounts.credit });
 });
 
-module.exports = { router };
+module.exports = router;

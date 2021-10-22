@@ -1,7 +1,8 @@
 const express = require("express");
 const { accounts, writeJSON } = require("../data");
 
-// const router = express.Router();
+// const {router} = require("express.Router");
+const router = express.Router();
 
 router.get("/transfer", (req, res) => {
   res.render("transfer");
@@ -31,4 +32,4 @@ router.post("/payment", (req, res) => {
   });
 });
 
-module.exports = { router };
+module.exports = router;
