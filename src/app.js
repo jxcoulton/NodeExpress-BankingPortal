@@ -63,7 +63,7 @@ app.post("/transfer", (req, res) => {
 });
 
 app.get("/payment", (req, res) => {
-  res.render("payment", { account: accounts.credit });
+  res.render("/payment", { account: accounts.credit });
 });
 
 app.post("/payment", (req, res) => {
