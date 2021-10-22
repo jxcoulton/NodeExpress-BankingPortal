@@ -59,11 +59,11 @@ app.post("/transfer", (req, res) => {
     accountsJSON,
     "utf8"
   );
-  res.render("/transfer", { message: "Transfer Completed" });
+  res.render("transfer", { message: "Transfer Completed" });
 });
 
 app.get("/payment", (req, res) => {
-  res.render("/payment", { account: accounts.credit });
+  res.render("payment", { account: accounts.credit });
 });
 
 app.post("/payment", (req, res) => {
@@ -72,7 +72,7 @@ app.post("/payment", (req, res) => {
     parseInt(accounts.credit.available) + parseInt(req.body.amount, 10);
   const accountsJSON = JSON.stringify(accounts, null, 4);
   fs.writeFileSync(path.join(__dirname, "accounts.json"), accountsJSON, "utf8");
-  res.render("/payment", {
+  res.render("payment", {
     message: "Payment Successful",
     account: accounts.credit,
   });
